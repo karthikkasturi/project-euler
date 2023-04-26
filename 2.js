@@ -4,20 +4,17 @@
 
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-
-
-function fibonacciUpto(n, a = 1, b = 2)
-{
-    if (a + b > n) {
-        return [b];
-    } 
-    return [a, ...fibonacciUpto(n, b, a + b)]
+function fibonacciUpto(n, a = 1, b = 2) {
+  if (a + b > n) {
+    return [b];
+  }
+  return [a, ...fibonacciUpto(n, b, a + b)];
 }
 
 const fibs = fibonacciUpto(4_000_000);
 
-const evenFibs = fibs.filter(x => x % 2 == 0);
+const evenFibs = fibs.filter((x) => x % 2 == 0);
 
 const sum = evenFibs.reduce((result, curr) => result + curr, 0);
 
-console.log(sum)
+console.log(sum);

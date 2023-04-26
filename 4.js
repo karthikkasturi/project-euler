@@ -4,14 +4,13 @@
 
 // SOL: A 6 digit palindrome needs to have 11 as a multiple.
 
-
 const isPalindromeNumber = (n) => {
   const val = n.toString();
   const rev = val.split("").reverse().join("");
   return val == rev;
 };
 
-let comp =0;
+let comp = 0;
 
 const min = (a, b) => {
   return a < b ? a : b;
@@ -24,7 +23,7 @@ const findMuls = () => {
   for (let i = 990; i > 100; i -= 11) {
     const a = min(parseInt(999999 / i), 999);
     for (let j = a; j > 0; j--) {
-        comp++;
+      comp++;
       if (isPalindromeNumber(i * j)) {
         if (i * j > maxPal) {
           maxPal = i * j;
@@ -39,4 +38,4 @@ const findMuls = () => {
 
 const [m1, m2] = findMuls();
 console.log(m1 * m2);
-console.log(comp)
+console.log(comp);

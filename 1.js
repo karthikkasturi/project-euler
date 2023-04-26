@@ -2,20 +2,19 @@
 
 // Find the sum of all the multiples of 3 or 5 below 1000.
 
-
-
 const solve = (multiples, limit = 1000) => {
-    let i = 0, sum = 0;
-    while(i < limit) {
-        for(let j  = 0; j < multiples.length; j++) {
-            if (i % multiples[j] == 0) {
-                sum += i;
-                break;
-            }
-        }
-        i++;
+  let i = 0,
+    sum = 0;
+  while (i < limit) {
+    for (let j = 0; j < multiples.length; j++) {
+      if (i % multiples[j] == 0) {
+        sum += i;
+        break;
+      }
     }
-    return sum;
-}
+    i++;
+  }
+  return sum;
+};
 
-console.log(solve([3,5], 1000))
+console.log(solve([3, 5], 1000));
